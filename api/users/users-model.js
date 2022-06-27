@@ -13,7 +13,12 @@ async function add(user) {
     return findById(id)
 }
 
+function getAll() {
+    return db('users')
+}
+
 module.exports = {
     add,
-    findByUsername
+    findByUsername,
+    getAll
 }
