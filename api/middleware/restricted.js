@@ -22,11 +22,6 @@ module.exports = (req, res, next) => {
        res.status(401).json({ message: 'token invalid'})
        return
      }
-     const user = await User.findById(decoded.subject);
-     if(user == null) {
-       res.status(401).json({ message: 'access is restricted' });
-       return;
-     }
 
      next()
    })
